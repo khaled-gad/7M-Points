@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>7M Points</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="container">
+            <div class="overall-counter" id="overall-counter">0</div>
+            <div class="smaller-counters" >
+                <div class="health">
+                    <div class="health-counter" id="health-counter">0</div>
+                    <div class="healthtier">
+                        <button class="button" onclick="increment('health', 1)">1+</button>
+                        <button class="button" onclick="increment('health', 1)">+1</button>
+                        <button class="button" onclick="increment('health', 1)">+1</button>
+                    </div>
+                    <div class="healthtier">
+                        <button class="button" onclick="increment('health', 5)">+5</button>
+                        <button class="button" onclick="increment('health', 5)">+5</button>
+                        <button class="button" onclick="increment('health', 5)">+5</button>
+                    </div>
+                    <div class="healthtier">
+                        <button class="button" onclick="increment('health', 50)">+50</button>
+                        <button class="button" onclick="increment('health', 50)">+50</button>
+                        <button class="button" onclick="increment('health', 50)">+50</button>
+                    </div>
+                    <div class="healthtier">
+                        <button class="button" onclick="increment('health', 500)">+500</button>
+                        <button class="button" onclick="increment('health', 500)">+500</button>
+                        <button class="button" onclick="increment('health', 500)">+500</button>
+                    </div>
+                    <div class="goldtier">
+                        <button class="button" onclick="increment('health', Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000)">Surprise</button>
+                    </div>
+                </div>
+                <div class="money">
+                    <div class="money-counter" id="money-counter">0</div>
+                    <div class="moneytier">
+                        <button class="button" onclick="increment('money', 1)">+1</button>
+                        <button class="button" onclick="increment('money', 1)">+1</button>
+                        <button class="button" onclick="increment('money', 1)">+1</button>
+                    </div>
+                    <div class="moneytier">
+                        <button class="button" onclick="increment('money', 5)">+5</button>
+                        <button class="button" onclick="increment('money', 5)">+5</button>
+                        <button class="button" onclick="increment('money', 5)">+5</button>
+                    </div>
+                    <div class="moneytier">
+                        <button class="button" onclick="increment('money', 50)">+50</button>
+                        <button class="button" onclick="increment('money', 50)">+50</button>
+                        <button class="button" onclick="increment('money', 50)">+50</button>
+                    </div>
+                    <div class="moneytier">
+                        <button class="button" onclick="increment('money', 500)">+500</button>
+                        <button class="button" onclick="increment('money', 500)">+500</button>
+                        <button class="button" onclick="increment('money', 500)">+500</button>
+                    </div>
+                    <div class="goldtier">
+                        <button class="button" onclick="increment('money', Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000)">Surprise</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function increment(type, value) {
+            if (type === 'health') {
+                var healthCounter = document.getElementById('health-counter');
+                var bigCounter = document.getElementById('overall-counter');
+                var healthValue = parseInt(healthCounter.textContent);
+                healthCounter.textContent = healthValue + value;
+                bigCounter.textContent = parseInt(bigCounter.textContent) + value;
+            } else if (type === 'money') {
+                var moneyCounter = document.getElementById('money-counter');
+                var bigCounter = document.getElementById('overall-counter');
+                var moneyValue = parseInt(moneyCounter.textContent);
+                moneyCounter.textContent = moneyValue + value;
+                bigCounter.textContent = parseInt(bigCounter.textContent) + value;
+            }
+        }
+    </script>
+</html>
